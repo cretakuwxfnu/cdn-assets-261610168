@@ -1,0 +1,14 @@
+<html><head><style>html{height:7px} div#out{font-size:18px}</style></head><body><div id="out">INIT</div>
+<script>
+function rep(s){document.getElementById('out').textContent=s;}
+var q=(location.search||'').replace('?','');
+function rlen(r){return r?r.length:'null';}
+try{
+  var d=document.documentElement;
+  var s='TOP='+(window.top===window)+'|ORIGIN='+location.origin+'|RS='+document.readyState;
+  s+='|MATCHdoc='+rlen(window.getMatchedCSSRules(d));
+  var el=document.getElementById('out');
+  s+='|MATCHdiv='+rlen(window.getMatchedCSSRules(el,true));
+  rep(s);
+}catch(e){ rep('ERR '+e); }
+</script></body></html>
